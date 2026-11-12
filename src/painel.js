@@ -1,0 +1,1 @@
+//  inscrição e processamento (subscriber)
