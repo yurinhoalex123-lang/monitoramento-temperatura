@@ -9,7 +9,13 @@ const servidor = mqtt.connect('mqtt://localhost:1883')
 
 const senso =require('./temperatura')
 
-console.log(senso);
+senso.leituratemperatura
+
+async function name() {
+    console.log(await senso.leituratemperatura(10,20));
+}
+
+name()
 
 servidor.on('error',function(erro){
     console.log(erro);

@@ -1,12 +1,28 @@
 // # funções de leitura/validação
 let sensor ={
-    sensor_id:null,
+    id:null,
     temperatura:null,
     unidade_medida:'celsius',
-    timestamp:new Date().toISOString(),
-    status:null
+    timestamp:null,
 }
 
-module.exports = sensor;
+function aleatorio(){
 
-function
+    return Math.floor(Math.random()*11)+Math.floor(Math.random()*11)+Math.floor(Math.random()*11)+8
+}
+
+
+function leituratemperatura(id,temp,){
+    return new Promise(function(resolve, reject){
+        setTimeout(function(){
+        sensor.id= 'sensor-sala-01'
+        console.log(aleatorio());
+        sensor.temperatura= aleatorio()
+        sensor.timestamp=new Date().toISOString()
+        resolve(JSON.stringify(sensor))
+        },3000)
+    });
+}
+
+
+module.exports= {leituratemperatura}
