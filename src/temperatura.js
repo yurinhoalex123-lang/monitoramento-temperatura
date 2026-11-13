@@ -12,7 +12,7 @@ function aleatorio(){
 }
 
 
-function leituratemperatura(id,temp,){
+function temperatura(id,temp,){
     return new Promise(function(resolve, reject){
         setTimeout(function(){
         sensor.id= 'sensor-sala-01'
@@ -25,4 +25,4 @@ function leituratemperatura(id,temp,){
 }
 
 
-module.exports= {leituratemperatura}
+module.exports= {temperatura}
