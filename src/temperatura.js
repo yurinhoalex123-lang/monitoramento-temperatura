@@ -1,4 +1,6 @@
 // # funções de leitura/validação
+const config=require('./config')
+
 let sensor ={
     id:null,
     temperatura:null,
@@ -12,17 +14,22 @@ function aleatorio(){
 }
 
 
-function temperatura(id,temp,){
+function temperatura(){
     return new Promise(function(resolve, reject){
         setTimeout(function(){
-        sensor.id= 'sensor-sala-01'
-        console.log(aleatorio());
-        sensor.temperatura= aleatorio()
-        sensor.timestamp=new Date().toISOString()
-        resolve(JSON.stringify(sensor))
-        },3000)
+        if(Math.random()*10<9){
+            sensor.id= 'sensor-sala-01'
+            sensor.temperatura= aleatorio()
+            sensor.timestamp=new Date().toISOString()
+            resolve(JSON.stringify(sensor))
+        }
+        else{
+            reject("falha na leitura sensor-sala-01")
+        }
+        },config.intervalo)
     });
 }
 
-
+// Exporta a função temperatura para que possa ser utcilizada
+// em outros arquivos do projeto, como o publisher.js
 module.exports= {temperatura}
