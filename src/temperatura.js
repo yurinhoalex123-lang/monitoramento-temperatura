@@ -8,6 +8,8 @@ let sensor ={
     timestamp:null,
 }
 
+
+// Retorna a soma de três números aleatórios entre 0 e 10, mais 8.
 function aleatorio(){
 
     return Math.floor(Math.random()*11)+Math.floor(Math.random()*11)+Math.floor(Math.random()*11)+8
